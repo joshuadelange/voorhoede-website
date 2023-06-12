@@ -9,6 +9,7 @@
 <script setup>
   const route = useRoute();
   const config = useRuntimeConfig();
+  useServiceWorker();
 
   useHead({
     htmlAttrs: {
