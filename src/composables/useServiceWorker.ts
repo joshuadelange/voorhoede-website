@@ -1,12 +1,8 @@
-import serviceWorker from "#service-worker";
-
 export function useServiceWorker() {
   if ("serviceWorker" in navigator === false) return;
 
   const configurationVersion = 1;
-  const serviceWorkerUrl = `${
-    serviceWorker.url
-  }?configuration=${encodeURIComponent(
+  const serviceWorkerUrl = `/service-worker.js?configuration=${encodeURIComponent(
     `/service-worker-configuration.json?v=${configurationVersion}`
   )}`;
   navigator.serviceWorker

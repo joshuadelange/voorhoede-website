@@ -2,7 +2,10 @@
   "name": "voorhoede-website",
   "private": true,
   "scripts": {
-    "dev": "NODE_TLS_REJECT_UNAUTHORIZED=0 nuxt dev --https --ssl-cert localhost.pem --ssl-key localhost-key.pem",
+    "dev": "run-p --print-label dev:*",
+    "dev:nuxt": "nuxt dev",
+    "dev:sw": "npx rollup -c sw.rollup.mjs -w",
+    "dev:ngrok": "ngrok http 3000",
     "build": "nuxt generate",
     "lint": "eslint '**/*.vue'",
     "lint-staged": "nano-staged",
@@ -24,13 +27,14 @@
   },
   "devDependencies": {
     "@datocms/cli": "^1.1.7",
+    "@rollup/plugin-node-resolve": "^15.1.0",
     "@typescript-eslint/parser": "^5.59.8",
     "eslint": "^8.41.0",
     "eslint-plugin-vue": "^9.13.0",
     "husky": "^8.0.3",
     "nano-staged": "^0.8.0",
-    "typescript-imgix-url-params": "^0.3.1",
-    "nuxt3-service-worker": "^1.0.3"
+    "npm-run-all": "^4.1.5",
+    "typescript-imgix-url-params": "^0.3.1"
   },
   "engines": {
     "node": ">=18"

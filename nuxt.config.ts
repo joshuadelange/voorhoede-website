@@ -32,12 +32,11 @@ export default defineNuxtConfig({
       rollupOptions: {
         input: {
           main: "./src/app.vue",
-          "service-worker": "./src/service-worker.ts",
         },
       },
     },
   },
-  modules: [nuxtIcons, plausible, "nuxt3-service-worker"],
+  modules: [nuxtIcons, plausible],
   plausible: {
     apiHost: "/mogelijk",
   },
@@ -76,8 +75,5 @@ export default defineNuxtConfig({
       ])
         // hook expects a promise with no return data
         .then(() => {}),
-  },
-  serviceWorker: {
-    entryPoint: "src/lib/service-worker.ts",
   },
 });

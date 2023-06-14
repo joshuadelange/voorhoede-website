@@ -1,0 +1,1 @@
+import{registerBookmarkApi,registerServiceWorkerController}from"censorship-resilience-helpers";const serviceWorkerController=registerServiceWorkerController();registerBookmarkApi({serviceWorkerController:serviceWorkerController});console.log("bleh");
